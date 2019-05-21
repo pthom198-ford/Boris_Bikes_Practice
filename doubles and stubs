@@ -1,0 +1,24 @@
+let(:broken_bike) {double(:bike)}
+
+#To respond to certain method
+
+
+let(:broken_bike) {double(:bike, :working => false)}
+let(:working_bike) {double(:bike, :working => false)}
+
+#this is the equivalent to making double classes below:
+
+class broken_bike
+  working = false
+end
+
+class working_bike
+  working = true
+end
+
+
+#don't add stubs until after the errors
+
+def initialize(other_object = Object.new)
+@other_object = other_object
+end
